@@ -1,6 +1,6 @@
 'use client'
 
-import PacienteCard from './PacienteCard'
+import PacienteCard from '@/components/ui/pacientes/PacienteCard'
 
 const pacientesMock = [
   { id: '1', nome: 'João Silva', ar: true, tono: false, criadoEm: '09:20' },
@@ -17,4 +17,3 @@ export default function ListaPacientes() {
     </div>
   )
 }
-
