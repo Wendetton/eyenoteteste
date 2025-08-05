@@ -43,3 +43,12 @@
     "node_modules"
   ]
 }
+{
+  "compilerOptions": {
+    // ...outras opções
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"]
+    }
+  }
+}
