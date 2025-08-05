@@ -8,10 +8,7 @@ export default function AssistentePage() {
         <p className="text-gray-600 text-sm">Crie pacientes e envie os exames.</p>
       </header>
       <main>
-        <div className="rounded-lg border-dashed border-gray-300 border p-6 text-center text-gray-400">
-          Interface de envio de exames será exibida aqui.
-        </div>
+        {/* Interface Assistente */}
       </main>
     </div>
-  )
 }
