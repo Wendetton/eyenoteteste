@@ -1,6 +1,14 @@
 'use client'
 
-export default function PacienteCard({ paciente }: { paciente: any }) {
+export interface Paciente {
+  id: string
+  nome: string
+  ar?: boolean
+  tono?: boolean
+  criadoEm: string
+}
+
+export default function PacienteCard({ paciente }: { paciente: Paciente }) {
   return (
     <div className="border rounded-lg p-4 bg-white shadow hover:shadow-md transition">
       <h2 className="font-bold text-lg">{paciente.nome}</h2>
@@ -12,3 +20,4 @@ export default function PacienteCard({ paciente }: { paciente: any }) {
     </div>
   )
 }
+
