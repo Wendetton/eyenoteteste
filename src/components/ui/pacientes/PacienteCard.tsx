@@ -20,4 +20,3 @@ export default function PacienteCard({ paciente }: { paciente: Paciente }) {
     </div>
   )
 }
-
