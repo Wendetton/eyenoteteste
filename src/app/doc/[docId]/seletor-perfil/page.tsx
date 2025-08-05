@@ -1,3 +1,4 @@
+
 'use client'
 
 import { useEffect, useState } from 'react'
@@ -10,7 +11,7 @@ export default function SeletorPerfil() {
   useEffect(() => {
     if (perfil) {
       localStorage.setItem('perfil-eyenote', perfil)
-      router.push(perfil)  // vai para '/doc/[id]/medico' ou '/assistente'
+      router.replace(perfil)
     }
   }, [perfil, router])
 
@@ -19,13 +20,13 @@ export default function SeletorPerfil() {
       <h1 className="text-xl font-bold">Escolha seu perfil</h1>
       <div className="flex gap-6">
         <button
-          className="bg-blue-400 hover:bg-blue-500 text-white px-6 py-3 rounded-xl text-lg font-semibold"
+          className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg"
           onClick={() => setPerfil('medico')}
         >
           Médico
         </button>
         <button
-          className="bg-green-400 hover:bg-green-500 text-white px-6 py-3 rounded-xl text-lg font-semibold"
+          className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg"
           onClick={() => setPerfil('assistente')}
         >
           Assistente
