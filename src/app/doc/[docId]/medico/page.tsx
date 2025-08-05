@@ -10,10 +10,23 @@ export default function MedicoPage() {
 
   return (
     <PacienteProvider>
-      {/* ...seu layout antigo... */}
-      <button onClick={() => setModalOpen(true)}>Criar Paciente</button>
-      <ListaPacientes />
-      <ModalCriarPaciente isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
+      <div className="min-h-screen p-6 bg-gray-50">
+        <header className="mb-6 flex items-center justify-between">
+          <div>
+            <h1 className="text-2xl font-bold">Painel do Médico</h1>
+            <p className="text-gray-600 text-sm">Gerencie os pacientes e acompanche os exames aqui.</p>
+          </div>
+          <button
+            onClick={() => setModalOpen(true)}
+            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+          >
+            Criar Paciente
+          </button>
+        </header>
+        <main>
+          <ListaPacientes />
+        </main>
+        <ModalCriarPaciente isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
+      </div>
     </PacienteProvider>
-  )
 }
