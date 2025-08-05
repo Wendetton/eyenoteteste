@@ -1,6 +1,6 @@
 'use client'
 
-import PacienteCard from '@/components/ui/pacientes/PacienteCard'
+import { useState } from 'react'
 import { usePacienteContext } from '@/context/paciente-context'
 
 export default function ListaPacientes() {
