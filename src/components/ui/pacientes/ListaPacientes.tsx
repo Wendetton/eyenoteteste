@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import PacienteCard, { Paciente } from '@/components/ui/pacientes/PacienteCard'
 import { usePacienteContext } from '@/context/paciente-context'
 
 export default function ListaPacientes() {
@@ -12,10 +12,9 @@ export default function ListaPacientes() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {pacientes.map(p => (
+      {pacientes.map((p: Paciente) => (
         <PacienteCard key={p.id} paciente={p} />
       ))}
     </div>
   )
 }
-
