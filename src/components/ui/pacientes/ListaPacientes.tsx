@@ -1,19 +1,21 @@
 'use client'
 
 import PacienteCard from '@/components/ui/pacientes/PacienteCard'
-
-const pacientesMock = [
-  { id: '1', nome: 'João Silva', ar: true, tono: false, criadoEm: '09:20' },
-  { id: '2', nome: 'Maria Souza', ar: true, tono: true, criadoEm: '09:25' },
-  { id: '3', nome: 'Carlos Lima', ar: false, tono: false, criadoEm: '09:30' }
-]
+import { usePacienteContext } from '@/context/paciente-context'
 
 export default function ListaPacientes() {
+  const { pacientes } = usePacienteContext()
+
+  if (pacientes.length === 0) {
+    return <p className="text-gray-500">Nenhum paciente cadastrado.</p>
+  }
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {pacientesMock.map((p) => (
+      {pacientes.map(p => (
         <PacienteCard key={p.id} paciente={p} />
       ))}
     </div>
   )
 }
+
