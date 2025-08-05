@@ -1,6 +1,6 @@
 'use client'
 
-import ListaPacientes from '@/components/pacientes/ListaPacientes'
+import ListaPacientes from '@/components/ui/pacientes/ListaPacientes'
 
 export default function MedicoPage() {
   return (
