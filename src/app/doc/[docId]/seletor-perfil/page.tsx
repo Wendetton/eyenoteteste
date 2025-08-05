@@ -1,4 +1,3 @@
-
 'use client'
 
 import { useEffect, useState } from 'react'
@@ -33,5 +32,4 @@ export default function SeletorPerfil() {
         </button>
       </div>
     </div>
-  )
 }
