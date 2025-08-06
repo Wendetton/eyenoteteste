@@ -1,21 +1,18 @@
-'use client'
-
-import { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+'use client';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Page({ params }: { params: { docId: string } }) {
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {
-    const perfil = localStorage.getItem('perfil-eyenote')
+    const perfil = localStorage.getItem('perfil-eyenote');
     if (!perfil) {
-      router.replace(`/doc/${params.docId}/seletor-perfil`)
-    } else if (perfil === 'medico') {
-      router.replace(`/doc/${params.docId}/medico`)
+      router.replace(`/doc/${params.docId}/seletor-perfil`);
     } else {
-      router.replace(`/doc/${params.docId}/assistente`)
+      router.replace(`/doc/${params.docId}/${perfil}`);
     }
-  }, [params.docId, router])
+  }, [params.docId, router]);
 
-  return null
+  return null;
 }

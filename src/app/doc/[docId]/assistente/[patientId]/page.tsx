@@ -1,20 +1,19 @@
-'use client'
-
-import { useParams } from 'next/navigation'
-import { useState } from 'react'
+'use client';
+import { useParams } from 'next/navigation';
+import { useState } from 'react';
 
 export default function AssistentePacientePage() {
-  const { patientId } = useParams<{ docId: string; patientId: string }>()
-  const [file, setFile] = useState<File | null>(null)
+  const { patientId } = useParams<{ docId: string; patientId: string }>();
+  const [file, setFile] = useState<File | null>(null);
 
-  const handleUpload = async () => {
-    if (!file) return
+  const handleUpload = () => {
+    if (!file) return;
     // Lógica de upload para Firebase Storage ou Vercel Blob
-  }
+  };
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Enviar exames para paciente</h1>
+      <h1 className="text-2xl font-bold mb-4">Enviar exames</h1>
       <input
         type="file"
         accept="image/*"
@@ -29,4 +28,5 @@ export default function AssistentePacientePage() {
         Enviar
       </button>
     </div>
+  );
 }

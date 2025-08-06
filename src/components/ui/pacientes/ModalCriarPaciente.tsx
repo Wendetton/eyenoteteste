@@ -1,13 +1,12 @@
-'use client'
-
-import { useState } from 'react'
-import { usePacienteContext } from '@/context/paciente-context'
+'use client';
+import React, { useState } from 'react';
+import { usePacienteContext } from '@/context/paciente-context';
 
 export default function ModalCriarPaciente({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
-  const [nome, setNome] = useState('')
-  const { adicionarPaciente } = usePacienteContext()
+  const [nome, setNome] = useState('');
+  const { adicionarPaciente } = usePacienteContext();
 
-  if (!isOpen) return null
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
@@ -21,13 +20,15 @@ export default function ModalCriarPaciente({ isOpen, onClose }: { isOpen: boolea
           onChange={e => setNome(e.target.value)}
         />
         <div className="flex justify-end gap-2">
-          <button onClick={onClose} className="px-4 py-2 rounded bg-gray-200">Cancelar</button>
+          <button onClick={onClose} className="px-4 py-2 rounded bg-gray-200">
+            Cancelar
+          </button>
           <button
             onClick={() => {
               if (nome.trim()) {
-                adicionarPaciente(nome.trim())
-                setNome('')
-                onClose()
+                adicionarPaciente(nome.trim());
+                setNome('');
+                onClose();
               }
             }}
             className="px-4 py-2 rounded bg-blue-500 text-white"
@@ -37,5 +38,5 @@ export default function ModalCriarPaciente({ isOpen, onClose }: { isOpen: boolea
         </div>
       </div>
     </div>
-  )
+  );
 }

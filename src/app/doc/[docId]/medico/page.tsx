@@ -1,12 +1,11 @@
-'use client'
-
-import { useState } from 'react'
-import { PacienteProvider } from '@/context/paciente-context'
-import ListaPacientes from '@/components/ui/pacientes/ListaPacientes'
-import ModalCriarPaciente from '@/components/ui/pacientes/ModalCriarPaciente'
+'use client';
+import { useState } from 'react';
+import { PacienteProvider } from '@/context/paciente-context';
+import ListaPacientes from '@/components/ui/pacientes/ListaPacientes';
+import ModalCriarPaciente from '@/components/ui/pacientes/ModalCriarPaciente';
 
 export default function MedicoPage() {
-  const [isModalOpen, setModalOpen] = useState(false)
+  const [isModalOpen, setModalOpen] = useState(false);
 
   return (
     <PacienteProvider>
@@ -14,7 +13,7 @@ export default function MedicoPage() {
         <header className="mb-6 flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold">Painel do Médico</h1>
-            <p className="text-gray-600 text-sm">Gerencie os pacientes e acompanche os exames aqui.</p>
+            <p className="text-gray-600 text-sm">Gerencie pacientes e exames.</p>
           </div>
           <button
             onClick={() => setModalOpen(true)}
@@ -29,4 +28,5 @@ export default function MedicoPage() {
         <ModalCriarPaciente isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
       </div>
     </PacienteProvider>
+  );
 }

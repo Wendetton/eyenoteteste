@@ -1,12 +1,6 @@
-'use client'
-
-export interface Paciente {
-  id: string
-  nome: string
-  ar?: boolean
-  tono?: boolean
-  criadoEm: string
-}
+'use client';
+import React from 'react';
+import { Paciente } from '@/context/paciente-context';
 
 export default function PacienteCard({ paciente }: { paciente: Paciente }) {
   return (
@@ -14,9 +8,9 @@ export default function PacienteCard({ paciente }: { paciente: Paciente }) {
       <h2 className="font-bold text-lg">{paciente.nome}</h2>
       <p className="text-sm text-gray-500 mt-1">Criado às {paciente.criadoEm}</p>
       <div className="mt-2 text-sm text-gray-700 space-y-1">
-        <p>AR: {paciente.ar ? '✅' : '❌'}</p>
-        <p>Tono: {paciente.tono ? '✅' : '❌'}</p>
+        <p>AR: {paciente.arUrl ? '✅' : '❌'}</p>
+        <p>Tono: {paciente.tonoUrl ? '✅' : '❌'}</p>
       </div>
     </div>
-  )
+  );
 }

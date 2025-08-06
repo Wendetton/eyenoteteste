@@ -1,18 +1,17 @@
-'use client'
-
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
+'use client';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function SeletorPerfil() {
-  const router = useRouter()
-  const [perfil, setPerfil] = useState<string | null>(null)
+  const router = useRouter();
+  const [perfil, setPerfil] = useState<string | null>(null);
 
   useEffect(() => {
     if (perfil) {
-      localStorage.setItem('perfil-eyenote', perfil)
-      router.replace(perfil)
+      localStorage.setItem('perfil-eyenote', perfil);
+      router.replace(perfil);
     }
-  }, [perfil, router])
+  }, [perfil, router]);
 
   return (
     <div className="flex flex-col items-center justify-center h-screen gap-8">
@@ -32,4 +31,5 @@ export default function SeletorPerfil() {
         </button>
       </div>
     </div>
+  );
 }

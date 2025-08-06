@@ -1,21 +1,19 @@
-
-'use client'
-
-import { useParams } from 'next/navigation'
-import { usePacienteContext, Paciente } from '@/context/paciente-context'
-import { useState, useEffect } from 'react'
+'use client';
+import { useParams } from 'next/navigation';
+import { usePacienteContext, Paciente } from '@/context/paciente-context';
+import { useState, useEffect } from 'react';
 
 export default function PacientePage() {
-  const { patientId } = useParams<{ docId: string; patientId: string }>()
-  const { pacientes } = usePacienteContext()
-  const [paciente, setPaciente] = useState<Paciente | null>(null)
+  const { patientId } = useParams<{ docId: string; patientId: string }>();
+  const { pacientes } = usePacienteContext();
+  const [paciente, setPaciente] = useState<Paciente | null>(null);
 
   useEffect(() => {
-    const found = pacientes.find(p => p.id === patientId)
-    setPaciente(found ?? null)
-  }, [pacientes, patientId])
+    const found = pacientes.find(p => p.id === patientId);
+    setPaciente(found ?? null);
+  }, [pacientes, patientId]);
 
-  if (!paciente) return <p>Paciente não encontrado.</p>
+  if (!paciente) return <p>Paciente não encontrado.</p>;
 
   return (
     <div className="p-6">
@@ -27,4 +25,5 @@ export default function PacientePage() {
         {/* Painel de abas Tono / AR e visualizador de imagens */}
       </section>
     </div>
+  );
 }

@@ -1,5 +1,5 @@
 {
-  "name": "eyenote-pacientes-v2",
+  "name": "eyenote",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -16,6 +16,8 @@
   },
   "devDependencies": {
     "typescript": "5.8.3",
+    "@types/react": "19.1.0",
+    "@types/node": "20.17.30",
     "eslint": "9.24.0",
     "eslint-config-next": "15.1.4",
     "tailwindcss": "3.4.17",
