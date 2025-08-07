@@ -1,0 +1,1 @@
+export default function Doc() { return <div>Escolha seu perfil</div>; }
