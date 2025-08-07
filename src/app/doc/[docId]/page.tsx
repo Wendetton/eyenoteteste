@@ -1,1 +1,1 @@
-export default function Doc() { return <div>Escolha seu perfil</div>; }
+export default function EscolherPerfil() { return <div>Escolha: Médico ou Assistente</div>; }

@@ -1,0 +1,1 @@
+export default function Assistente() { return <div>Adicionar paciente - modo Assistente</div>; }

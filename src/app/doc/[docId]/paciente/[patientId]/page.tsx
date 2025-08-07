@@ -1,0 +1,1 @@
+export default function PacientePage() { return <div>Visualizando paciente</div>; }

@@ -1,1 +1,1 @@
-export default function Medico() { return <div>Lista de pacientes</div>; }
+export default function Medico() { return <div>Lista de pacientes - modo Médico</div>; }

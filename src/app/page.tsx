@@ -1,1 +1,1 @@
-export default function Home() { return <div>Bem-vindo ao Eyenote</div>; }
+export default function Home() { return <div className="p-8 text-xl">Bem-vindo ao Eyenote</div>; }
